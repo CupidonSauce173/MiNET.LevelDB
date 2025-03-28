@@ -3,7 +3,7 @@ using System.Linq;
 using System.Runtime.CompilerServices;
 using System.Text;
 
-namespace MiNET.LevelDB.Utils
+namespace PigNet.LevelDB.Utils
 {
 	public class LevelDbUtils
 	{

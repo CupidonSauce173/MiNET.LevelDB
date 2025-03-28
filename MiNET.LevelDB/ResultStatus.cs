@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace MiNET.LevelDB
+namespace PigNet.LevelDB
 {
 	public enum ResultState
 	{

@@ -8,16 +8,16 @@
 		<LangVersion>latest</LangVersion>
 
 		<GeneratePackageOnBuild>true</GeneratePackageOnBuild>
-		<PackageId>MiNET.LevelDB</PackageId>
+		<PackageId>PigNet.LevelDB</PackageId>
 		<Version>0.0.0</Version>
 		<Authors>gurun</Authors>
 		<Company>Niclas Olofsson</Company>
-		<Description>LevelDB implementation for MiNET. Goal is to be able to read bedrock world-files stored in LevelDB and using zlib compression.</Description>
+		<Description>LevelDB implementation for PigNet. Goal is to be able to read bedrock world-files stored in LevelDB and using zlib compression.</Description>
 		<Copyright>Copyright Niclas Olofsson 2015-2019</Copyright>
-		<PackageProjectUrl>https://github.com/NiclasOlofsson/MiNET.LevelDB</PackageProjectUrl>
+		<PackageProjectUrl>https://github.com/NiclasOlofsson/PigNet.LevelDB</PackageProjectUrl>
 		<PackageIconUrl>https://secure.gravatar.com/avatar/2ba5d72bdad85108d14512c4d27ea550?s=128&amp;r=g&amp;d=retro</PackageIconUrl>
-		<PackageTags>MiNET MCPE Minecraft PocketEdition bedrock LevelDB</PackageTags>
-		<PackageLicenseUrl>https://raw.githubusercontent.com/NiclasOlofsson/MiNET.LevelDB/master/LICENSE</PackageLicenseUrl>
+		<PackageTags>PigNet MCPE Minecraft PocketEdition bedrock LevelDB</PackageTags>
+		<PackageLicenseUrl>https://raw.githubusercontent.com/NiclasOlofsson/PigNet.LevelDB/master/LICENSE</PackageLicenseUrl>
 		<FileVersion>10.0.0.0</FileVersion>
 		<AssemblyVersion>10.0.0.0</AssemblyVersion>
 	</PropertyGroup>
@@ -27,10 +27,11 @@
 	</ItemGroup>
 
 	<ItemGroup>
+		<PackageReference Include="BenchmarkDotNet" Version="0.14.0" />
 		<PackageReference Include="Crc32.NET" Version="1.2.0" />
-		<PackageReference Include="log4net" Version="2.0.8" />
+		<PackageReference Include="log4net" Version="3.0.3" />
 		<PackageReference Include="Maybe.NET" Version="1.0.123" />
-		<PackageReference Include="Newtonsoft.Json" Version="12.0.3" />
+		<PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
 	</ItemGroup>
 
 

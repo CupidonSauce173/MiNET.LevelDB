@@ -1,9 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.IO;
-using MiNET.LevelDB.Utils;
+using PigNet.LevelDB.Utils;
 
-namespace MiNET.LevelDB
+namespace PigNet.LevelDB
 {
 	public class BloomFilterPolicy
 	{

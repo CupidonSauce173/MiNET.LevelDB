@@ -3,7 +3,7 @@ using System.Buffers.Binary;
 using System.IO;
 using System.Text;
 
-namespace MiNET.LevelDB.Utils
+namespace PigNet.LevelDB.Utils
 {
 	public ref struct SpanReader
 	{
