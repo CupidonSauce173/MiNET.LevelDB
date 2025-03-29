@@ -58,7 +58,7 @@ namespace PigNet.LevelDB
 
 		public ResultStatus Get(Span<byte> key)
 		{
-			if (Log.IsDebugEnabled) Log.Debug($"Get Key from table: {key.ToHexString()}");
+			//if (Log.IsDebugEnabled) Log.Debug($"Get Key from table: {key.ToHexString()}");
 
 			// To find a key in the table you:
 			// 1) Read the block index. This index have one entry for each block in the file. For each entry it holds the
@@ -74,7 +74,7 @@ namespace PigNet.LevelDB
 			BlockHandle handle = FindBlockHandleInBlockIndex(key);
 			if (handle == null)
 			{
-				if (Log.IsDebugEnabled) Log.Warn($"Key was in range for table, but found no exact match in file {_file.Name}");
+				//if (Log.IsDebugEnabled) Log.Warn($"Key was in range for table, but found no exact match in file {_file.Name}");
 				return ResultStatus.NotFound;
 			}
 
@@ -175,7 +175,7 @@ namespace PigNet.LevelDB
 			if (seeker.Seek(key))
 			{
 				Span<byte> foundKey = seeker.Key;
-				if (Log.IsDebugEnabled) Log.Debug($"Found key in block index: {foundKey.ToHexString()}");
+				//if (Log.IsDebugEnabled) Log.Debug($"Found key in block index: {foundKey.ToHexString()}");
 				if (_comparator.Compare(foundKey.UserKey(), key) >= 0)
 				{
 					ReadOnlySpan<byte> value = seeker.CurrentValue;
@@ -205,7 +205,7 @@ namespace PigNet.LevelDB
 				{
 					if (keyType == 0)
 					{
-						if (Log.IsDebugEnabled) Log.Warn($"Found deleted entry for Key={foundKey.ToHexString()}\nWas search for key={key.ToHexString()}");
+						//if (Log.IsDebugEnabled) Log.Warn($"Found deleted entry for Key={foundKey.ToHexString()}\nWas search for key={key.ToHexString()}");
 						return ResultStatus.Deleted;
 					}
 					if (keyType == 1)
@@ -213,7 +213,7 @@ namespace PigNet.LevelDB
 						//     value: char[value_length]
 						ReadOnlySpan<byte> value = seeker.CurrentValue;
 
-						if (Log.IsDebugEnabled) Log.Debug($"Seek key: {key.ToHexString()} and found key: {foundKey.ToHexString()} with data:\n{value.HexDump(cutAfterFive: true)}");
+						//if (Log.IsDebugEnabled) Log.Debug($"Seek key: {key.ToHexString()} and found key: {foundKey.ToHexString()} with data:\n{value.HexDump(cutAfterFive: true)}");
 
 						return new ResultStatus(ResultState.Exist, value);
 					}

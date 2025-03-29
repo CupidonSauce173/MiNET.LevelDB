@@ -27,6 +27,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using log4net;
+using MiNET.LevelDB;
 using PigNet.LevelDB.Utils;
 
 namespace PigNet.LevelDB

@@ -32,12 +32,14 @@ using System.Runtime.CompilerServices;
 using System.Threading;
 using System.Threading.Tasks;
 using log4net;
+using PigNet.LevelDB;
 using PigNet.LevelDB.Enumerate;
 using PigNet.LevelDB.Utils;
+using Version = PigNet.LevelDB.Version;
 
 [assembly: InternalsVisibleTo("PigNet.LevelDB.Tests")]
 
-namespace PigNet.LevelDB
+namespace MiNET.LevelDB
 {
 	public interface IDatabase : IDisposable
 	{
@@ -550,11 +552,11 @@ namespace PigNet.LevelDB
 
 		private void TryCompactLevel0()
 		{
-			Log.Debug($"Trying to do merge compact of level 0 to level 1..");
+			//Log.Debug($"Trying to do merge compact of level 0 to level 1..");
 
 			if (!_dbLock.IsWriteLockHeld)
 			{
-				Log.Error("Panic!");
+				//Log.Error("Panic!");
 				throw new PanicException("Tried to compact without holding a write lock. Abort!");
 			}
 
@@ -563,7 +565,7 @@ namespace PigNet.LevelDB
 
 			if (level0FilesToCompact.Count < (int) Options.MaxNumberOfLogFiles)
 			{
-				Log.Debug($"No level 0 to 1 compact needed at this time.");
+				//Log.Debug($"No level 0 to 1 compact needed at this time.");
 				return;
 			}
 
@@ -651,12 +653,12 @@ namespace PigNet.LevelDB
 
 			CleanOldFiles();
 
-			Log.Debug($"Done with merge compact of level 0 to level 1..");
+			//Log.Debug($"Done with merge compact of level 0 to level 1..");
 		}
 
 		private void TryCompactLevelN()
 		{
-			Log.Debug($"Trying to do merge compact of level n to level ..");
+			//Log.Debug($"Trying to do merge compact of level n to level ..");
 
 			if (!_dbLock.IsWriteLockHeld)
 			{
@@ -754,7 +756,7 @@ namespace PigNet.LevelDB
 				CleanOldFiles();
 			}
 
-			Log.Debug($"Done merge compact of level n to level ..");
+			//Log.Debug($"Done merge compact of level n to level ..");
 		}
 
 		public FileMetadata GetNextFileToCompactForLevel(List<FileMetadata> files, byte[] lastCompactionKey)

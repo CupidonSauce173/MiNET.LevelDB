@@ -28,6 +28,7 @@ using System.IO;
 using System.IO.Compression;
 using System.IO.MemoryMappedFiles;
 using log4net;
+using MiNET.LevelDB;
 using PigNet.LevelDB.Utils;
 
 namespace PigNet.LevelDB
